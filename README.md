@@ -1,272 +1,200 @@
-# AI-Powered Study Notes Generator
+# 🧠 MindMapFlow AI
 
-> Transform any topic into comprehensive, structured study materials with AI-powered content generation and seamless PDF export.
+**Transform your study notes into beautiful, interactive visualizations!**
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![React](https://img.shields.io/badge/React-18.2.0-blue.svg)
-![Node](https://img.shields.io/badge/Node.js-16+-green.svg)
-![AI](https://img.shields.io/badge/AI-Google%20Gemini-orange.svg)
+MindMapFlow AI is a powerful full-stack application that helps students convert unstructured text notes into:
+- 🌟 **Interactive Mind Maps** - Perfect for organizing concepts and topic overviews
+- 📊 **Dynamic Flowcharts** - Ideal for step-by-step processes and procedures
 
-## 🌟 Key Features
+## ✨ Features
 
-- **🤖 AI-Powered Content Generation**: Uses Google's Gemini AI to create detailed, structured study notes
-- **📊 Visual Diagrams**: Generates educational diagrams and visual aids  
-- **📄 Professional PDF Export**: High-quality PDF generation with multiple templates
-- **🎯 Education Level Customization**: Basic, Intermediate, and Advanced content levels
-- **⚡ Real-time Progress**: Live updates during content generation
-- **📱 Responsive Design**: Works seamlessly on desktop and mobile devices
-- **🔄 Content Regeneration**: Regenerate individual sections or entire notes
-- **🎨 Modern UI**: Clean, intuitive interface built with React and Tailwind CSS
+### 🎯 Core Functionality
+- **AI-Powered Analysis**: Converts plain text notes into structured visualizations
+- **Dual Visualization Types**: Choose between mind maps and flowcharts
+- **Smart Recommendations**: AI suggests the best visualization type for your content
+- **Interactive Editing**: Drag, zoom, and customize your visualizations
+- **Export Options**: Download as PNG or PDF for offline use
 
-## 🚀 Live Demo
+### 🎨 User Experience
+- **Modern UI**: Clean, responsive design with mobile-first approach
+- **Dark/Light Mode**: Toggle between themes for comfortable viewing
+- **Sample Content**: Pre-loaded examples to get you started quickly
+- **Real-time Generation**: Live progress tracking during AI processing
 
-Visit the [live application](https://your-demo-url.com) to try it out!
+### 🤖 AI Integration
+- **Multiple AI Providers**: Support for both Gemini AI and OpenAI GPT-4
+- **Optimized Prompts**: Specialized prompts for mind map and flowchart generation
+- **Content Analysis**: Intelligent detection of content type (conceptual vs procedural)
 
-**Sample Topics to Try:**
-- "Photosynthesis" (Basic level)
-- "Chemical Equilibrium" (Advanced level)  
-- "World War II Causes" (Intermediate level)
-- "Machine Learning Basics" (Intermediate level)
+### 📱 Technical Features
+- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile
+- **Interactive Visualizations**: Built with D3.js and ReactFlow
+- **Export Capabilities**: High-quality PNG and PDF export
+- **Zoom & Pan**: Smooth navigation for large visualizations
 
-## 📋 Table of Contents
+## 🚀 Quick Start
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [API Setup](#api-setup)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
-
-## 🔧 Installation
-
-### Prerequisites
-- Node.js 16 or higher
-- npm or yarn package manager
-- Google Gemini API key (free)
-
-### Quick Start
-
-1. **Clone the repository**
-```bash
-git clone https://github.com/yourusername/ai-study-notes-generator.git
-cd ai-study-notes-generator
-```
-
-2. **Install dependencies**
+### 1. Install Dependencies
 ```bash
 npm install
 ```
 
-3. **Configure environment variables**
+### 2. Set Up Environment Variables
+Copy `.env.example` to `.env` and add your API keys:
+
 ```bash
 cp .env.example .env
-# Add your Gemini API key to .env
-VITE_GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-4. **Start the development server**
+Edit `.env` with your API keys:
+```env
+# Required: Get from https://ai.google.dev/
+VITE_GEMINI_API_KEY=your_gemini_api_key_here
+
+# Optional: Get from https://platform.openai.com/api-keys
+VITE_OPENAI_API_KEY=your_openai_api_key_here
+```
+
+### 3. Start Development Server
 ```bash
 npm start
 ```
 
-5. **Open your browser**
-Navigate to `http://localhost:5173` to use the application.
+Visit `http://localhost:3000` to see your app!
 
-## 📖 Usage
+## 🎓 How to Use
 
-### Basic Workflow
+### For Mind Maps (Concepts & Topics):
+1. Paste notes about a topic (e.g., "Photosynthesis", "World War II", "React Hooks")
+2. Click "Generate Mind Map" 
+3. Get a hierarchical visualization with main topic, subtopics, and key points
+4. Perfect for: Definitions, categorized information, topic overviews
 
-1. **Enter Topic**: Type any study topic (e.g., "Photosynthesis", "World War II")
-2. **Select Education Level**: Choose Basic, Intermediate, or Advanced
-3. **Add Custom Requirements**: Optional specific requirements or focus areas
-4. **Generate Notes**: Click "Generate Study Notes" and wait for AI processing
-5. **Review Content**: Browse generated sections with definitions, explanations, key points, applications, and summary
-6. **Export PDF**: Download professionally formatted PDF with one click
+### For Flowcharts (Processes & Procedures):
+1. Paste step-by-step instructions or processes
+2. Click "Generate Flowchart"
+3. Get a process flow with start/end nodes, decisions, and actions
+4. Perfect for: Algorithms, procedures, workflows, decision trees
 
-### Advanced Features
+### Smart Features:
+- **Smart Suggest**: Let AI recommend the best visualization type
+- **Sample Content**: Try pre-loaded examples for both mind maps and flowcharts
+- **AI Provider Choice**: Switch between Gemini AI and OpenAI
+- **Export Options**: Save your visualizations as PNG or PDF
 
-- **Section Regeneration**: Click the regenerate button on any section to get alternative content
-- **Content Editing**: Continue to the note editor for further customization
-- **Template Selection**: Choose from Modern, Academic, or Minimal PDF templates
-- **Topic Suggestions**: Browse categorized suggestions or search popular topics
+## 🏗️ Architecture
 
-## ✨ Features
+### Frontend (React + Vite)
+- **Components**: Modular React components for each visualization type
+- **Styling**: TailwindCSS for responsive, modern design
+- **State Management**: React hooks for local state
+- **Visualization Libraries**: 
+  - D3.js for interactive mind maps
+  - ReactFlow for dynamic flowcharts
 
-### AI Content Generation
-- **Structured Output**: Consistent 5-section format (Definition, Explanation, Key Points, Applications, Summary)
-- **Education Levels**: Content complexity automatically adjusted for target audience
-- **Custom Requirements**: Tailor content with specific focus areas or constraints
-- **Multiple Subjects**: Works with Science, Math, History, Literature, Technology, and more
+### AI Integration
+- **Gemini AI**: Primary AI provider for content generation
+- **OpenAI GPT-4**: Alternative AI provider option
+- **Custom Prompts**: Specialized prompts for each visualization type
+- **Content Analysis**: Smart content type detection
 
-### PDF Export System
-- **Professional Formatting**: Clean, academic-style layouts with proper typography
-- **Multiple Templates**: Modern, Academic, and Minimal design options
-- **Visual Integration**: Includes generated diagrams and charts
-- **Customizable Options**: Control content inclusion, page numbering, and branding
-
-### User Interface
-- **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Progress Tracking**: Real-time updates during content generation
-- **Error Handling**: Graceful error recovery with retry mechanisms
-- **Accessibility**: Screen reader support and keyboard navigation
-
-## 🛠 Tech Stack
-
-### Core Technologies
-- **Frontend**: React 18.2.0 with Vite
-- **Styling**: Tailwind CSS 3.4.6 with custom design system
-- **Routing**: React Router DOM 6.0.2
-- **Icons**: Lucide React for consistent iconography
-- **Animations**: Framer Motion for smooth transitions
-
-### AI & PDF Libraries
-- **AI Integration**: Google Generative AI (@google/generative-ai)
-- **PDF Generation**: jsPDF for programmatic PDF creation
-- **HTML to Canvas**: html2canvas for visual content capture
-- **Form Handling**: React Hook Form for form management
-
-### Development Tools
-- **Build Tool**: Vite 5.0.0 for fast development and builds
-- **CSS Framework**: Tailwind CSS with typography and forms plugins
-- **Package Manager**: npm
-- **Code Quality**: ESLint configuration for React
-
-## � API Setup
-
-### Google Gemini AI Setup
-
-1. **Get API Key**
-   - Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
-   - Sign in with your Google account
-   - Create a new API key
-   - Copy the generated key
-
-2. **Configure Environment**
-   ```bash
-   VITE_GEMINI_API_KEY=your_actual_api_key_here
-   ```
-
-3. **Verify Setup**
-   - Restart the development server
-   - Try generating notes for a simple topic like "Water Cycle"
-   - Check browser console for any API errors
-
-### API Usage & Limits
-- **Free Tier**: 60 requests per minute
-- **Content Limits**: Best results with topics under 500 characters
-- **Rate Limiting**: Built-in retry mechanisms for rate limit handling
+### Export System
+- **HTML2Canvas**: Convert visualizations to images
+- **jsPDF**: Generate PDF documents
+- **High Quality**: Vector-based exports when possible
 
 ## 📁 Project Structure
 
 ```
 src/
 ├── components/
-│   ├── ui/                          # Reusable UI components
-│   │   ├── Header.jsx              # Navigation header
-│   │   ├── Button.jsx              # Custom button component
-│   │   └── Breadcrumb.jsx          # Navigation breadcrumbs
-│   ├── AppIcon.jsx                 # Icon wrapper component
-│   └── ErrorBoundary.jsx           # Error boundary for React errors
+│   ├── MindMapVisualization.jsx     # D3.js mind map component
+│   ├── FlowchartVisualization.jsx   # ReactFlow flowchart component
+│   └── ui/                          # Reusable UI components
 ├── pages/
-│   ├── dashboard/                   # Main landing page
-│   │   ├── index.jsx               # Dashboard container
-│   │   └── components/             # Dashboard-specific components
-│   ├── note-generation-interface/   # Core generation interface
-│   │   ├── index.jsx               # Main generation page
-│   │   └── components/             # Generation components
-│   │       ├── TopicInputSection.jsx
-│   │       ├── GenerationProgress.jsx
-│   │       ├── GeneratedContent.jsx
-│   │       ├── TopicSuggestions.jsx
-│   │       └── ErrorHandler.jsx
-│   ├── note-editor/                # Note editing interface
-│   │   └── components/
-│   │       └── PDFPreview.jsx      # PDF preview modal
-│   └── study-library/              # Saved notes library
+│   └── note-generation-interface/
+│       ├── index.jsx                # Main app entry
+│       └── components/
+│           └── MindMapFlowInterface.jsx  # Main interface
 ├── utils/
-│   ├── geminiAPI.js                # AI integration functions
-│   ├── geminiClient.js             # Gemini client configuration
-│   └── pdfGenerator.js             # PDF export utilities
-├── styles/                         # Global styles and Tailwind config
-├── App.jsx                         # Main application component
-├── Routes.jsx                      # Application routing
-└── index.jsx                       # Application entry point
+│   ├── mindMapAPI.js               # AI generation logic
+│   ├── openaiClient.js             # OpenAI configuration
+│   └── geminiClient.js             # Gemini AI configuration
+└── styles/                         # Global styles
 ```
 
-## 🎯 Use Cases
+## 🔧 Configuration
 
-### Educational Institutions
-- **Teachers**: Quickly create study materials for lesson planning
-- **Students**: Generate comprehensive notes for exam preparation
-- **Tutors**: Create customized content for different learning levels
+### Environment Variables
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `VITE_GEMINI_API_KEY` | Google Gemini AI API key | Yes |
+| `VITE_OPENAI_API_KEY` | OpenAI API key | No |
 
-### Professional Development
-- **Training Materials**: Generate content for corporate training sessions
-- **Research**: Create structured overviews of complex topics
-- **Documentation**: Generate educational content for technical subjects
+### AI Providers
+- **Gemini AI** (Default): Free tier available, good performance
+- **OpenAI GPT-4**: Requires paid subscription, excellent quality
 
-### Personal Learning
-- **Self-Study**: Explore new subjects with structured learning materials
-- **Exam Preparation**: Create focused study guides for certifications
-- **Knowledge Building**: Generate comprehensive overviews of interests
+## 🎨 Customization
+
+### Themes
+- Toggle between light and dark modes
+- Responsive design adapts to screen size
+- Consistent color scheme throughout
+
+### Visualization Customization
+- **Mind Maps**: Color-coded subtopics, zoomable interface
+- **Flowcharts**: Draggable nodes, different shapes for different node types
+- **Export**: Customizable file names based on content
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
-```bash
-npm install -g vercel
-vercel
-```
-
-### Netlify
+### Build for Production
 ```bash
 npm run build
-# Upload dist/ folder to Netlify dashboard
 ```
 
-### Docker
-```bash
-docker build -t ai-study-notes .
-docker run -p 3000:3000 ai-study-notes
-```
+### Deploy Options
+- **Vercel**: Connect your GitHub repo for automatic deployments
+- **Netlify**: Drag & drop the `dist` folder
+- **GitHub Pages**: Use GitHub Actions for CI/CD
+
+### Environment Setup for Production
+Make sure to set your environment variables in your deployment platform:
+- Vercel: Project Settings → Environment Variables
+- Netlify: Site Settings → Environment Variables
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
-
-### Development Process
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Commit your changes: `git commit -m 'Add amazing feature'`
+4. Push to the branch: `git push origin feature/amazing-feature`
 5. Open a Pull Request
 
-### Reporting Issues
-Please use the [issue tracker](https://github.com/yourusername/ai-study-notes-generator/issues) to report bugs or request features.
-
-## � License
+## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## � Acknowledgments
+## 🙏 Acknowledgments
 
-- [Google Gemini AI](https://ai.google.dev/) for powerful content generation
-- [React](https://reactjs.org/) for the robust frontend framework
-- [Tailwind CSS](https://tailwindcss.com/) for the beautiful styling system
-- [Lucide React](https://lucide.dev/) for the clean icon system
-- [jsPDF](https://github.com/parallax/jsPDF) for PDF generation capabilities
+- **React**: UI framework
+- **D3.js**: Data visualization library
+- **ReactFlow**: Interactive node-based UIs
+- **TailwindCSS**: Utility-first CSS framework
+- **Gemini AI**: Google's AI platform
+- **OpenAI**: GPT-4 language model
+- **Lucide React**: Beautiful icons
 
-## 📞 Support
+## 🆘 Support
 
-- **Documentation**: Full guides available in the `/docs` folder
-- **Issues**: Report bugs or request features via GitHub Issues
-- **Discussions**: Join community discussions in GitHub Discussions
-- **Email**: For direct support, contact [support@yourdomain.com]
+If you encounter any issues or have questions:
+
+1. Check the [Issues](../../issues) page
+2. Create a new issue with detailed description
+3. Include steps to reproduce the problem
+4. Mention your browser and OS version
 
 ---
 
-**Built with ❤️ using React, Tailwind CSS, and Google Gemini AI**
-
-*Transform any topic into professional study materials in seconds!*
+**Made with ❤️ for students who love visual learning!**
